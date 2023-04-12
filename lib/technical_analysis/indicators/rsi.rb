@@ -93,7 +93,7 @@ module TechnicalAnalysis
           if avg_loss == 0
             rsi = 100
           else
-            rs = avg_gain / avg_loss
+            rs = avg_gain.to_f / avg_loss.to_f
             rsi = (100.00 - (100.00 / (1.00 + rs)))
           end
 
