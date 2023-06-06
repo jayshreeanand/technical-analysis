@@ -69,7 +69,7 @@ module TechnicalAnalysis
         if typical_prices.size == period
           period_sma = ArrayHelper.average(typical_prices)
           mean_deviation = ArrayHelper.mean(typical_prices.map { |tp| (tp - period_sma).abs })
-          cci = (typical_price - period_sma) / (constant * mean_deviation)
+          cci = (typical_price - period_sma).to_f / (constant * mean_deviation).to_f
 
           output << CciValue.new(date_time: v[:date_time], cci: cci)
 
